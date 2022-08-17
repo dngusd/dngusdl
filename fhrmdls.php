@@ -6,7 +6,9 @@ $sqlans="select * from login where id='{$id}' && password='{$password}'";
 
 if(mysqli_query($link,$sqlans)){
 //로그인 성공
-
+    session_start();
+    $_SESSION["id"]=$id;
+    echo "<script>alert('환영합니다!');location.href='index.html';</script>";
 }
 else {
 //로그인 실패
