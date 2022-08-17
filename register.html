@@ -15,14 +15,6 @@
       <p><input type="password" name="password" placeholder="비밀번호" required></p>
       <p><input type="password" name="password_confirm" placeholder="비밀번호 확인" required></p>
       <p><input type="submit" value="회원 가입"></p>
-      <?php
-        if ( $wu == 1 ) {
-          echo "<script>alert('사용자이름이 중복되었습니다.');location.href='register.html';</script>";
-        }
-        if ( $wp == 1 ) {
-          echo "<script>alert('비밀번호가 일치하지 않습니다.');location.href='register.html';</script>";
-        }
-      ?>
     </form>
   </body>
 </html>
