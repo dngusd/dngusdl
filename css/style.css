@@ -4,7 +4,7 @@
 }
 
 html {
-    font-size: 10px;
+    font-size: 15px;
 }
 
 ul, li {
@@ -275,4 +275,9 @@ a {
     box-sizing: border-box;
     border: 0;
     resize: vertical;
+}
+
+.login {
+    font-size: 2rem;
+    position: fixed;
 }
