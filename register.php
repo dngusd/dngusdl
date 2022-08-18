@@ -1,5 +1,5 @@
 <?php
-  if ( is_set($_POST['id']) && is_set($_POST['password']) && is_set($_POST['password_confirm'])) {
+  if ( isset($_POST['id']) && isset($_POST['password']) && isset($_POST['password_confirm'])) {
       $username = $_POST[ 'id' ];
       $password = $_POST[ 'password' ];
       $password_confirm = $_POST[ 'password_confirm' ];
