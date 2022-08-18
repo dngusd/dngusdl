@@ -17,7 +17,7 @@
       $encrypted_password = password_hash( $password, PASSWORD_DEFAULT);
       $jb_sql_add_user = "INSERT INTO login ( id, password ) VALUES ( '$username', '$encrypted_password' );";
       mysqli_query( $jb_conn, $jb_sql_add_user );
-      echo "<script>alert('회원가입이 완료되었습니다!');location.href='index.html';</script>"
+      echo "<script>alert('회원가입이 완료되었습니다!');location.href='index.html';</script>";
     } 
     if ( $wu == 1 ) {
         echo "<script>alert('사용자이름이 중복되었습니다.');location.href='register.html';</script>";
