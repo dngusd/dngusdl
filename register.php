@@ -14,7 +14,7 @@
         echo "<script>alert('비밀번호가 일치하지 않습니다.');location.href='register.html';</script>";
     } else {
       $encrypted_password = password_hash( $password, PASSWORD_DEFAULT);
-      $jb_sql_add_user = "INSERT INTO login ( id, password,name ) VALUES ( '$id', '$encrypted_password', '$username');";
+      $jb_sql_add_user = "INSERT INTO login ( id, password,name ) VALUES ( '{$id}', '{$encrypted_password}', '{$username}');";
       mysqli_query( $jb_conn, $jb_sql_add_user );
       echo "<script>alert('회원가입이 완료되었습니다!');location.href='index.html';</script>";
     } 
