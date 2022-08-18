@@ -1,13 +1,13 @@
 <?php
-  $username = $_POST[ 'id' ];
-  $password = $_POST[ 'password' ];
-  $password_confirm = $_POST[ 'password_confirm' ];
-  if ( !is_null( $username ) ) {
-    $jb_conn = mysqli_connect( 'localhost', 'root', '', 'dngusdldl' );
+  if ( is_set($_POST['id']) && is_set($_POST['password']) && is_set($_POST['password_confirm'])) {
+      $username = $_POST[ 'id' ];
+      $password = $_POST[ 'password' ];
+      $password_confirm = $_POST[ 'password_confirm' ];
+    $jb_conn = mysqli_connect( 'localhost', 'whkim712', 'white.1245', 'dngusdldl' );
     $jb_sql = "SELECT id FROM login WHERE id = '$username';";
     $jb_result = mysqli_query( $jb_conn, $jb_sql );
     while ( $jb_row = mysqli_fetch_array( $jb_result ) ) {
-      $username_e = $jb_row[ 'username' ];
+      $username_e = $jb_row[ 'id' ];
     }
     if ( $id == $username_e ) {
       $wu = 1;

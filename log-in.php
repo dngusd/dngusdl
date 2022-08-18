@@ -1,7 +1,7 @@
 <?php
 $id=$_POST["id"];
 $password=$_POST["password"];
-$link=mysqli_connect("localhost","root","","dngusdldl");
+$link=mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
 $sqlans="select * from login where id='{$id}' && password='{$password}'";
 
 if(mysqli_query($link,$sqlans)){
