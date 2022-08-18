@@ -16,7 +16,7 @@
       $encrypted_password = password_hash( $password, PASSWORD_DEFAULT);
       $jb_sql_add_user = "INSERT INTO login ( id, password,name ) VALUES ( '{$id}', '{$encrypted_password}', '{$username}');";
       mysqli_query( $jb_conn, $jb_sql_add_user );
-      echo "<script>alert('회원가입이 완료되었습니다!');location.href='index.html';</script>";
+      echo "<script>alert('회원가입이 완료되었습니다!');location.href='index.php';</script>";
     } 
   }
 ?>
