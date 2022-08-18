@@ -1,5 +1,5 @@
 <?php
-  $username = $_POST[ 'username' ];
+  $username = $_POST[ 'id' ];
   $password = $_POST[ 'password' ];
   $password_confirm = $_POST[ 'password_confirm' ];
   if ( !is_null( $username ) ) {
