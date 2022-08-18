@@ -7,7 +7,8 @@
     $jb_conn = mysqli_connect( 'localhost', 'whkim712', 'white.1245', 'dngusdldl' );
     $jb_sql = "SELECT id FROM login WHERE id = '$id';";
     $jb_result = mysqli_query( $jb_conn, $jb_sql );
-    if ( $jb_result ) {
+    $jb_resultt = mysqli_fetch_array($jb_result);
+    if ( $jb_resultt ) {
         echo "<script>alert('사용자이름이 중복되었습니다.');location.href='register.html';</script>";
     } elseif ( $password != $password_confirm ) {
         echo "<script>alert('비밀번호가 일치하지 않습니다.');location.href='register.html';</script>";
