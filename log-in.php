@@ -5,7 +5,7 @@ $encrypted_password = password_hash( $password, PASSWORD_DEFAULT);
 $link=mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
 $sqlans="SELECT * from login where id='{$id}' && password='{$encrypted_password}'";
 
-if(mysqli_query($link,$sqlans)){
+if(mysqli_fetch_array(mysqli_query($link,$sqlans))){
 //로그인 성공
     session_start();
     $_SESSION["id"]=$id;
