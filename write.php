@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $title = $_POST['title'];
     $cont = $_POST['contents'];
     $link = mysqli_connect( 'localhost', 'whkim712', 'white.1245', 'dngusdldl' );
