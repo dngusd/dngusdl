@@ -13,6 +13,6 @@ if(mysqli_fetch_array(mysqli_query($link,$sqlans))){
 }
 else {
 //로그인 실패
-    echo "<script>alert('{$encrypted_password}');location.href='login.html';</script>";
+    echo "<script>alert('{$password}');location.href='login.html';</script>";
 }
 ?>
