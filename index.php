@@ -6,8 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>wu._.hy0의 게시판</title>
     <link rel="stylesheet" href="css/css.css">
-    <a href="login.html">로그인</a>하기
-    <a href="register.html">회원가입</a>하기
+    <?php
+      if (isset($_SESSION['id'])) {
+        $jb_conn = mysqli_connect( 'localhost', 'whkim712', 'white.1245', 'dngusdldl' );
+        $jb_sql = "SELECT name FROM login WHERE id = '{$_SESSION['id']}'";
+        $result = mysqli_fetch_array(mysqli_query($jb_conn,$jb_sql));
+        echo "<p>{$result['name']}님 환영합니다.</p>";
+      }
+      else{
+          echo "<a href='login.html'>로그인하기</a>";
+          echo "<a href='register.html'>회원가입하기</a>";
+      }
+    ?>
 </head>
 <body>
   <div class="board_wrap">

@@ -61,6 +61,7 @@
             <div class="bt_wrap">
                 <a href="index.php" class="on">목록</a>
                 <a href="">수정</a>
+                <a href="">삭제</a>
             </div>
         </div>
     </div>
