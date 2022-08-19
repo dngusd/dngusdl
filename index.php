@@ -7,6 +7,7 @@
     <title>wu._.hy0의 게시판</title>
     <link rel="stylesheet" href="css/css.css">
     <?php
+      session_start();
       if (isset($_SESSION['id'])) {
         $jb_conn = mysqli_connect( 'localhost', 'whkim712', 'white.1245', 'dngusdldl' );
         $jb_sql = "SELECT name FROM login WHERE id = '{$_SESSION['id']}'";
