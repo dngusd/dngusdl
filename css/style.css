@@ -36,7 +36,9 @@ a {
 
 .write_btn {
     font-size: 1.2rem;
-    right: 0px;
+    position: absolute;
+    left: 900px;
+    top: 0px;
 }
 
 .bt_wrap {
