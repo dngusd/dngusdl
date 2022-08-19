@@ -28,26 +28,23 @@
                 </tr>
           </thead>
           <?php
-            $sql = "select * from board order by idx desc limit 0,10"; 
+            $sql = "select * from board order by idx desc"; 
             $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
               while($board = mysqli_fetch_array(mysqli_query($link,$sql)))
-              {
-                $title=$board["title"]; 
-                if(strlen($title)>30)
-                { 
-                  $title=str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
-                }
+              { 
+                $dkanrjsk = <<< HERE
+                <tbody>
+                  <tr>
+                    <td width="70">{$board['idx']};</td>
+                    <td width="500"><a href="view.php">{$board['title']}</a></td>
+                    <td width="120">{$board['name']}</td>
+                    <td width="100">{$board['date']}</td>
+                  </tr>
+                </tbody>
+                HERE;
+                echo $dkanrjsk;
               }
-          ?>
-          <tbody>
-            <tr>
-              <td width="70"><?php echo $board['idx']; ?></td>
-              <td width="500"><a href=""><?php echo $title;?></a></td>
-              <td width="120"><?php echo $board['name']?></td>
-              <td width="100"><?php echo $board['date']?></td>
-            </tr>
-          </tbody>
-        <?php  ?>
+              ?>
       </table>
     </div>
   </body>
