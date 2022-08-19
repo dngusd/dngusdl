@@ -32,17 +32,14 @@
             $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
               while($board = mysqli_fetch_array(mysqli_query($link,$sql)))
               { 
-                $dkanrjsk = <<< HERE
-                <tbody>
+                echo '<tbody>
                   <tr>
-                    <td width="70">{$board['idx']};</td>
-                    <td width="500"><a href="view.php">{$board['title']}</a></td>
-                    <td width="120">{$board['name']}</td>
-                    <td width="100">{$board['date']}</td>
+                    <td width="70">{$board["idx"]};</td>
+                    <td width="500"><a href="view.php">{$board["title"]}</a></td>
+                    <td width="120">{$board["name"]}</td>
+                    <td width="100">{$board["date"]}</td>
                   </tr>
-                </tbody>
-                HERE;
-                echo $dkanrjsk;
+                </tbody>';
               }
               ?>
       </table>
