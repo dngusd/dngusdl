@@ -1,7 +1,7 @@
 <?php
 $id=$_POST["id"];
 $password=$_POST["password"];
-$encrypted_password = password_hash( $password, PASSWORD_DEFAULT);
+$encrypted_password = hash( "sha256" , $password);
 $link=mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
 $sqlans="SELECT * from login where id='{$id}' && password='{$encrypted_password}'";
 
