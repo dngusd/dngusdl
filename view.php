@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>wu._.hy0의 게시판</title>
     <link rel="stylesheet" href="css/css.css">
+    <?php
+        $idx = $_GET['vieww'];
+        $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
+        $sqlans = "SELECT * from board where idx={$idx}";
+        $result = mysqli_fetch_array(mysqli_query($link,$sqlans));
+    ?>
 </head>
 <body>
     <div class="board_wrap">
@@ -16,40 +22,45 @@
         <div class="board_view_wrap">
             <div class="board_view">
                 <div class="title">
-                    글 제목이 들어갑니다
+                    <?php
+                        echo $result['title'];
+                    ?>
                 </div>
                 <div class="info">
                     <dl>
                         <dt>번호</dt>
-                        <dt>1</dt>
+                        <dt>
+                            <?php
+                                echo $result['idx'];
+                            ?>
+                        </dt>
                     </dl>
                     <dl>
                         <dt>글쓴이</dt>
-                        <dt>김이름</dt>
+                        <dt>
+                        <?php
+                                echo $result['name'];
+                            ?>
+                        </dt>
                     </dl>
                     <dl>
                         <dt>작성일</dt>
-                        <dt>2022.8.13</dt>
-                    </dl>
-                    <dl>
-                        <dt>조회</dt>
-                        <dt>33</dt>
+                        <dt>
+                        <?php
+                                echo $result['date'];
+                            ?>
+                        </dt>
                     </dl>
                 </div>
                 <div class="cont">
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다
+                    <?php
+                        echo nl2br($result['cont']);
+                    ?>  
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="write.html" class="on">등록</a>
-                <a href="index.html">취소</a>
+                <a href="index.php" class="on">목록</a>
+                <a href="">수정</a>
             </div>
         </div>
     </div>
