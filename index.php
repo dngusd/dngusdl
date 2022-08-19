@@ -36,7 +36,7 @@
                 echo "<tbody>
                   <tr>
                     <td width='70'>{$board['idx']}</td>
-                    <td width='500'><a href='view.php'>{$board['title']}</a></td>
+                    <td width='500'><a href='view.php?vieww={$board['idx']}'>{$board['title']}</a></td>
                     <td width='120'>{$board['name']}</td>
                     <td width='100'>{$board['date']}</td>
                   </tr>
