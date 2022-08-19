@@ -18,21 +18,11 @@
                 <div class="title">
                     <dl>
                         <dt>제목</dt>
-                        <dd><input type="text" placeholder="제목 입력"></dd>
+                        <dd><input type="text" name="title" placeholder="제목 입력"></dd>
                     </dl>
                 </div>
-                <div class="info">
-                        <dl>
-                            <dt>글쓴이</dt>
-                            <dd><input type="text" placeholder="글쓴이 입력"></dd>
-                        </dl>
-                        <dl>
-                            <dt>비밀번호</dt>
-                            <dd><input type="password" placeholder="비밀번호 입력"></dd>
-                        </dl>
-                </div>
                 <div class="cont">
-                    <textarea placeholder="내용 입력"></textarea>
+                    <textarea name="contents" placeholder="내용 입력"></textarea>
                 </div>
             </div>
             <div class=" bt_wrap">
@@ -41,12 +31,12 @@
             </div>
             <?php
   if ( isset($_POST['id']) && isset($_POST['password']) && isset($_POST['password_confirm'])) {
-      $username = $_POST['nickname'];
-      $id = $_POST[ 'id' ];
+      $username = $_POST['user'];
       $password = $_POST[ 'password' ];
-      $password_confirm = $_POST[ 'password_confirm' ];
+      $title = $_POST[ 'title' ];
+      $content = $_POST[ 'content' ];
     $jb_conn = mysqli_connect( 'localhost', 'whkim712', 'white.1245', 'dngusdldl' );
-    $jb_sql = "SELECT id FROM login WHERE id = '$id';";}
+    $jb_sql = "SELECT  FROM board WHERE id = '$id';";
     $jb_result = mysqli_query( $jb_conn, $jb_sql );
     $jb_resultt = mysqli_fetch_array($jb_result);
     if ( $jb_resultt ) {
