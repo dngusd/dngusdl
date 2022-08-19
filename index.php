@@ -29,7 +29,8 @@
           </thead>
           <?php
             $sql = "select * from board order by idx desc limit 0,10"; 
-              while($board = mysqli_fetch_array($sql))
+            $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
+              while($board = mysqli_fetch_array(mysqli_query($link,$sql)))
               {
                 $title=$board["title"]; 
                 if(strlen($title)>30)
