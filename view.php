@@ -28,7 +28,7 @@
                 </div>
                 <div class="info">
                     <dl>
-                        <dt>번호</dt>
+                        <dt>번호 : </dt>
                         <dt>
                             <?php
                                 echo $result['idx'];
@@ -36,7 +36,7 @@
                         </dt>
                     </dl>
                     <dl>
-                        <dt>글쓴이</dt>
+                        <dt>글쓴이 : </dt>
                         <dt>
                         <?php
                                 echo $result['name'];
@@ -44,7 +44,7 @@
                         </dt>
                     </dl>
                     <dl>
-                        <dt>작성일</dt>
+                        <dt>작성일 : </dt>
                         <dt>
                         <?php
                                 echo $result['date'];
