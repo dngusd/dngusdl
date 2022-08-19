@@ -3,7 +3,7 @@ $id=$_POST["id"];
 $password=$_POST["password"];
 $encrypted_password = password_hash( $password, PASSWORD_DEFAULT);
 $link=mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
-$sqlans="SELECT * from login where id='{$id}' && password='{$encrypted_password}'";
+$sqlans="SELECT * from login where id='{$id}'";
 
 if(mysqli_fetch_array(mysqli_query($link,$sqlans))){
 //로그인 성공
