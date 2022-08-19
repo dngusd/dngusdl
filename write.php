@@ -1,3 +1,3 @@
 <?php
-    echo "{$_POST['title']} | {$_POST['content']}";
+    echo "{$_POST['title']} | {$_POST['contents']}";
 ?>
