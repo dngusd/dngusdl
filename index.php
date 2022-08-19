@@ -14,7 +14,7 @@
       <div class="board_title">
           <strong>wu._.hy0의 게시판</strong>
           <p>wu._.hy0의 개인 개시판입니다.</p>
-            <div id="write_btn">
+            <div class="write_btn">
             <a href="write.php">글쓰기</a>
             </div>
       </div>
