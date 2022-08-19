@@ -7,6 +7,7 @@
     <title>wu._.hy0의 게시판</title>
     <link rel="stylesheet" href="css/css.css">
     <?php
+        session_start();
         $idx = $_GET['vieww'];
         $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
         $sqlans = "SELECT * from board where idx={$idx}";
@@ -60,8 +61,12 @@
             </div>
             <div class="bt_wrap">
                 <a href="index.php" class="on">목록</a>
-                <a href="">수정</a>
-                <a href="">삭제</a>
+            <?php
+                if (isset($_SESSION['id']) && $_SESSION['id'] == $result['id']) {
+                    echo "<a href=''>수정</a>";
+                    echo "<a href=''>삭제</a>";
+                }
+            ?>
             </div>
         </div>
     </div>
