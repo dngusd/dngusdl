@@ -33,6 +33,7 @@
                 { 
                   $title=str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
                 }
+              }
           ?>
           <tbody>
             <tr>
