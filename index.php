@@ -30,7 +30,7 @@
           <?php
             $sql = "select * from board order by idx desc"; 
             $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
-              while($board = mysqli_fetch_row(mysqli_query($link,$sql)))
+              while($board = mysqli_fetch_assoc(mysqli_query($link,$sql)))
               { 
                 echo '<tbody>
                   <tr>
