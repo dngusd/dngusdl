@@ -29,7 +29,7 @@
             <div class="write_btn">
               <?php
               if (isset($_SESSION['id'])) {
-                echo "<a href="write.html">글쓰기</a>";
+                echo "<a href='write.html'>글쓰기</a>";
               }
               ?>
             </div>
