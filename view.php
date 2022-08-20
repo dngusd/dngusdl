@@ -64,7 +64,7 @@
             <?php
                 if (isset($_SESSION['id']) && $_SESSION['id'] == $result['id']) {
                     echo "<a href='modify.php?vieww={$idx}'>수정</a>";
-                    echo "<a href=''>삭제</a>";
+                    echo "<a href='delete.php?vieww={$idx}'>삭제</a>";
                 }
             ?>
             </div>
