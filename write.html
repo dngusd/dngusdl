@@ -14,7 +14,7 @@
             <p>wu._.hy0의 개인 개시판입니다.</p>
         </div>
         <div class="board_write_wrap">
-            <form action="write.php" method="post">
+            <form action="write.php" method="post" enctype="multipart/form-data">
                 <div class="board_write">
                     <div class="title">
                         <dl>
@@ -25,6 +25,9 @@
                     <div class="cont">
                         <textarea name="contents" placeholder="내용 입력"></textarea>
                     </div>
+                </div>
+                <div id="in_file">
+                    <input type="file" value="1" name="b_file">
                 </div>
                 <div class="bt_wrap">
                     <button type="submit">등록</button>
