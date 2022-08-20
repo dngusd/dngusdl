@@ -21,7 +21,7 @@
             <p>wu._.hy0의 개인 개시판입니다.</p>
         </div>
         <div class="board_write_wrap">
-            <form action="modifyok.php?index={$idx}" method="post">
+            <form action="modifyok.php?index=<?php echo $idx?>" method="post">
                 <div class="board_write">
                     <div class="title">
                         <dl>
