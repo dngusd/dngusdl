@@ -27,7 +27,11 @@
           <strong>wu._.hy0의 게시판</strong>
           <p>wu._.hy0의 개인 개시판입니다.</p>
             <div class="write_btn">
-            <a href="write.html">글쓰기</a>
+              <?php
+              if (isset($_SESSION['id'])) {
+                echo "<a href="write.html">글쓰기</a>";
+              }
+              ?>
             </div>
       </div>
       <table class="list-table">
