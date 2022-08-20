@@ -9,7 +9,6 @@
     <?php
         session_start();
         $idx = $_GET['vieww'];
-        $_SESSION['idx']=$idx;
         $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
         $sqlans = "SELECT * from board where idx={$idx}";
         $result = mysqli_fetch_array(mysqli_query($link,$sqlans));
