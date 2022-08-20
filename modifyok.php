@@ -9,6 +9,6 @@
         echo "<script>alert('글이 수정되었습니다.');location.href='/';</script>";
     }
     else {
-        echo "<script>alert('글 수정에 실패하였습니다.');location.href='/';</script>";
+        echo "<script>alert('글 수정에 실패하였습니다.');history.back();</script>";
     }
 ?>
