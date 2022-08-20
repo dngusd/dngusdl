@@ -9,6 +9,7 @@
     <?php
         session_start();
         $idx = $_GET['vieww'];
+        $_SESSION['idx']=$idx;
         $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
         $sqlans = "SELECT * from board where idx={$idx}";
         $result = mysqli_fetch_array(mysqli_query($link,$sqlans));
@@ -63,7 +64,7 @@
                 <a href="index.php" class="on">목록</a>
             <?php
                 if (isset($_SESSION['id']) && $_SESSION['id'] == $result['id']) {
-                    echo "<a href=''>수정</a>";
+                    echo "<a href='modify.php'>수정</a>";
                     echo "<a href=''>삭제</a>";
                 }
             ?>
