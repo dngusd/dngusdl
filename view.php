@@ -56,7 +56,9 @@
                 <div class="cont">
                     <?php
                         echo nl2br($result['cont']);
+                        if(isset())
                     ?>  
+                    
                 </div>
             </div>
             <div class="bt_wrap">
