@@ -11,7 +11,7 @@
     $idx = $_GET['idx'];
     $link = mysqli_connect( 'localhost', 'whkim712', 'white.1245', 'dngusdldl' );
     $sql = "SELECT * from board WHERE idx = {$idx}";
-    $board = mysqli_fetch_array(mysqli_query($idx,$sql));
+    $board = mysqli_fetch_array(mysqli_query($link,$sql));
     ?>
 </head>
 <body>
@@ -26,11 +26,11 @@
                     <div class="title">
                         <dl>
                             <dt>제목</dt>
-                            <dd><input type="text" name="title" placeholder="제목 입력"><?php echo $board['title']?></dd>
+                            <dd><input type="text" name="title" placeholder="제목 입력"><?php echo $board['title'];?></dd>
                         </dl>
                     </div>
                     <div class="cont">
-                        <textarea name="contents" placeholder="내용 입력"></textarea>
+                        <textarea name="contents" placeholder="내용 입력"><?php echo $board['cont'];?></textarea>
                     </div>
                 </div>
                 <div class="bt_wrap">
