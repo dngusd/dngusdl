@@ -13,6 +13,7 @@
         $jb_sql = "SELECT name FROM login WHERE id = '{$_SESSION['id']}'";
         $result = mysqli_fetch_array(mysqli_query($jb_conn,$jb_sql));
         echo "<p>{$result['name']}님 환영합니다.</p>";
+        echo "<a href='logout.php'>로그아웃하기</a>";
       }
       else{
           echo "<a href='login.html'>로그인하기</a>";
