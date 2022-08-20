@@ -26,7 +26,7 @@
                     <div class="title">
                         <dl>
                             <dt>제목</dt>
-                            <dd><input type="text" name="title" placeholder="제목 입력"><?php echo $board['title'];?></dd>
+                            <dd><textarea name="title" placeholder="제목 입력"><?php echo $board['title'];?></dd>
                         </dl>
                     </div>
                     <div class="cont">
