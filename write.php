@@ -11,6 +11,20 @@
             $uploaded_file_name_tmp = $_FILES[ 'myfile' ][ 'tmp_name' ];
             $uploaded_file_name = $_FILES[ 'myfile' ][ 'name' ];
             $upload_folder = "./uploads";
+
+            $ext = explode(".", strtolower($filename));
+
+            $filename = iconv("UTF-8", "EUC-KR",$_FILES['myfile']['name']);
+    $cnt = count($ext)-1;
+    if($ext[$cnt] === ""){
+    if(preg_match("/php|php3|php4|htm|inc|html/", $ext[$cnt-1])){
+           echo "업로드할 수 없는 파일 유형입니다.";
+       exit();
+    }
+    } else if(preg_match("/php|php3|php4|htm|inc|html/", $ext[$cnt])){
+         echo "업로드할 수 없는 파일 유형입니다.";
+            exit();
+        } 
             move_uploaded_file( $uploaded_file_name_tmp, $upload_folder.$uploaded_file_name );
         }
     }
