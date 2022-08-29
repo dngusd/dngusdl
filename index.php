@@ -35,6 +35,8 @@
             </div>
       </div>
       <table class="list-table">
+        <input type="radio" name="newold" value="1">최신순
+        <input type="radio" name="newold" value="2">오래된순
           <thead>
               <tr>
                   <th width="70">번호</th>
@@ -44,7 +46,12 @@
                 </tr>
           </thead>
           <?php
-            $sql = "select * from board order by idx desc"; 
+            if ("newold"==1) {
+              $sql = "select * from board order by idx desc"; 
+            }
+            elseif ("newold"==2) {
+              $sql = "select * from board order by idx asc"; 
+            }
             $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
             $result = mysqli_query($link,$sql);
               while($board = mysqli_fetch_assoc($result))
