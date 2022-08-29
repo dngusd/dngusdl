@@ -21,6 +21,8 @@
     $jb_conn = mysqli_connect( 'localhost', 'whkim712', 'white.1245', 'dngusdldl' );
         $jb_sql = "SELECT name FROM login WHERE id = '{$_SESSION['id']}'";
         $result = mysqli_fetch_array(mysqli_query($jb_conn,$jb_sql));
+        error_reporting(E_ALL); 
+        ini_set("display_errors",1);
         ?>
 </head>
 <body>
