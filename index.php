@@ -9,9 +9,7 @@
     <?php
       session_start();
       if (isset($_SESSION['id'])) {
-        $jb_conn = mysqli_connect( 'localhost', 'whkim712', 'white.1245', 'dngusdldl' );
-        $jb_sql = "SELECT name FROM login WHERE id = '{$_SESSION['id']}'";
-        $result = mysqli_fetch_array(mysqli_query($jb_conn,$jb_sql));
+        
         echo "<p>{$result['name']}님 환영합니다.</p>";
         echo "<a href='logout.php'>로그아웃하기</a>";
       }
@@ -19,7 +17,11 @@
           echo "<a href='login.html'>로그인하기</a>";
           echo "<a href='register.html'>회원가입하기</a>";
       }
-    ?>
+    
+    $jb_conn = mysqli_connect( 'localhost', 'whkim712', 'white.1245', 'dngusdldl' );
+        $jb_sql = "SELECT name FROM login WHERE id = '{$_SESSION['id']}'";
+        $result = mysqli_fetch_array(mysqli_query($jb_conn,$jb_sql));
+        ?>
 </head>
 <body>
   <div class="board_wrap">
