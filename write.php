@@ -11,10 +11,10 @@
             $uploaded_file_name_tmp = $_FILES[ 'myfile' ][ 'tmp_name' ];
             $uploaded_file_name = $_FILES[ 'myfile' ][ 'name' ];
             $upload_folder = "./uploads";
-
+            $filename = iconv("UTF-8", "EUC-KR",$_FILES['myfile']['name']);
             $ext = explode(".", strtolower($filename));
 
-            $filename = iconv("UTF-8", "EUC-KR",$_FILES['myfile']['name']);
+            
     $cnt = count($ext)-1;
     if($ext[$cnt] === ""){
     if(preg_match("/php|php3|php4|htm|inc|html/", $ext[$cnt-1])){
