@@ -1,7 +1,7 @@
 <?php
     session_start();
-    $title = $_POST['title'];
-    $cont = $_POST['contents'];
+    $title = htmlentities($_POST['title']);
+    $cont = htmlentities($_POST['contents']);
     $link = mysqli_connect( 'localhost', 'whkim712', 'white.1245', 'dngusdldl' );
     $id = $_SESSION['id'];
     $ququ = "INSERT into board (id, cont, title, date, name) values ('$id', '$cont','$title',now(),(select name from login where id='$id'))";

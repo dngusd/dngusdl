@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/css.css">
     <?php
         session_start();
-        $idx = $_GET['vieww'];
+        $idx = htmlentities($_GET['vieww']);
         $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
         $sqlans = "SELECT * from board where idx={$idx}";
         $result = mysqli_fetch_array(mysqli_query($link,$sqlans));
