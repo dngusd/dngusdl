@@ -48,11 +48,12 @@
                     <th width="100">작성일</th>
                 </tr>
           </thead>
+              
           <?php
+          $orderset='desc';
             if(isset($_POST['newold'])&&$_POST['newold']=='2')
               $orserset='asc';
-            else
-              $orderest='desc';
+           
               
               
               $sql = "select * from board order by idx $orderset"; 
