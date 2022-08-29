@@ -50,23 +50,36 @@
           <?php
             if ($_POST["newold"]==1) {
               $sql = "select * from board order by idx desc"; 
+              $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
+              $result = mysqli_query($link,$sql);
+                while($board = mysqli_fetch_assoc($result))
+                { 
+                  echo "<tbody>
+                    <tr>
+                      <td width='70'>{$board['idx']}</td>
+                      <td width='500'><a href='view.php?vieww={$board['idx']}'>{$board['title']}</a></td>
+                      <td width='120'>{$board['name']}</td>
+                      <td width='100'>{$board['date']}</td>
+                    </tr>
+                  </tbody>";
+                }
             }
             elseif ($_POST["newold"]==2) {
               $sql = "select * from board order by idx asc"; 
+              $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
+              $result = mysqli_query($link,$sql);
+                while($board = mysqli_fetch_assoc($result))
+                { 
+                  echo "<tbody>
+                    <tr>
+                      <td width='70'>{$board['idx']}</td>
+                      <td width='500'><a href='view.php?vieww={$board['idx']}'>{$board['title']}</a></td>
+                      <td width='120'>{$board['name']}</td>
+                      <td width='100'>{$board['date']}</td>
+                    </tr>
+                  </tbody>";
+                }
             }
-            $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
-            $result = mysqli_query($link,$sql);
-              while($board = mysqli_fetch_assoc($result))
-              { 
-                echo "<tbody>
-                  <tr>
-                    <td width='70'>{$board['idx']}</td>
-                    <td width='500'><a href='view.php?vieww={$board['idx']}'>{$board['title']}</a></td>
-                    <td width='120'>{$board['name']}</td>
-                    <td width='100'>{$board['date']}</td>
-                  </tr>
-                </tbody>";
-              }
               ?>
       </table>
     </div>
