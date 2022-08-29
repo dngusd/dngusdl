@@ -49,8 +49,13 @@
                 </tr>
           </thead>
           <?php
-          
-              $sql = "select * from board order by idx desc"; 
+            if(isset($_POST['newold'])&&$_POST['newold']=='2')
+              $orserset='asc';
+            else
+              $orderest='desc';
+              
+              
+              $sql = "select * from board order by idx $orderset"; 
               $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
               $result = mysqli_query($link,$sql);
                 while($board = mysqli_fetch_assoc($result))
