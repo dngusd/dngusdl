@@ -54,9 +54,9 @@
             if(isset($_POST['newold'])&&$_POST['newold']=='2')
               $orserset='asc';
            
+              $search=htmlentities($_POST['search']);
               
-              
-              $sql = "select * from board order by idx $orderset"; 
+              $sql = "select * from board where category like '%{$search}%'order by idx $orderset"; 
               $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
               $result = mysqli_query($link,$sql);
                 while($board = mysqli_fetch_assoc($result))
@@ -74,15 +74,5 @@
               ?>
       </table>
     </div>
-    <p>
-        <form action="./search.php" method="post">
-        <select name="category">
-            <option value="title">제목</option>
-            <option value="name">글쓴이</option>
-            <option value="content">내용</option>
-        </select>
-        <input type="text" name="search" placeholder="검색"><input type="submit" value="검색">
-        </form>
-        </p>
   </body>
 </html>
