@@ -7,12 +7,15 @@
     $ququ = "INSERT into board (id, cont, title, date, name) values ('$id', '$cont','$title',now(),(select name from login where id='$id'))";
     if(mysqli_query($link,$ququ)) {
         echo "<script>alert('글이 작성되었습니다.');location.href='/';</script>";
+    if(mysqli_query($link,$ququ)) {
         if ( isset($_FILE['myfile']) ) {
             $uploaded_file_name_tmp = $_FILES[ 'myfile' ][ 'tmp_name' ];
             $uploaded_file_name = $_FILES[ 'myfile' ][ 'name' ];
             $upload_folder = "./uploads";
             $filename = iconv("UTF-8", "EUC-KR",$_FILES['myfile']['name']);
             $ext = explode(".", strtolower($filename));
+        }
+        echo "<script>alert('글이 작성되었습니다.');location.href='/';</script>";
 
             
     $cnt = count($ext)-1;
