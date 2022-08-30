@@ -45,8 +45,9 @@
         </select>
         <input type="text" name="search" size="40" required="required" /> <button>검색</button>
         <?php
+        $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
           if(isset($_GET['search'])) {
-          $sql2 = mq("select * from board where $catagory like '%$search_con%' order");
+          $sql2 = mysqli_query($link,"select * from board where $catagory like '%$search_con%' order");
           while($board = $sql2->fetch_array()){
            
           $title=$board["title"]; 
@@ -54,7 +55,7 @@
               { 
                 $title=str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
               }
-            $sql3 = mq("select * from board where idx='".$board['idx']."'");
+            $sql3 = mysqli_query($link,"select * from board where idx='".$board['idx']."");
             $rep_count = mysqli_num_rows($sql3);
           }
         ?>
@@ -97,15 +98,5 @@
               ?>
       </table>
     </div>
-    <p>
-        <form action="./search.php" method="post">
-        <select name="category">
-            <option value="title">제목</option>
-            <option value="name">글쓴이</option>
-            <option value="content">내용</option>
-        </select>
-        <input type="text" name="search" placeholder="검색"><input type="submit" value="검색">
-        </form>
-        </p>
   </body>
 </html>
