@@ -7,7 +7,7 @@
     $ququ = "INSERT into board (id, cont, title, date, name) values ('$id', '$cont','$title',now(),(select name from login where id='$id'))";
     if(mysqli_query($link,$ququ)) {
         echo "<script>alert('글이 작성되었습니다.');location.href='/';</script>";
-        if ( $_POST[ "action" ] == "Upload" ) {
+        if ( isset($_FILE['myfile']) ) {
             $uploaded_file_name_tmp = $_FILES[ 'myfile' ][ 'tmp_name' ];
             $uploaded_file_name = $_FILES[ 'myfile' ][ 'name' ];
             $upload_folder = "./uploads";
