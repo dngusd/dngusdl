@@ -1,8 +1,8 @@
 <?php
   if ( isset($_POST['id']) && isset($_POST['password']) && isset($_POST['password_confirm'])) {
-      $username = $_POST['nickname'];
-      $id = $_POST[ 'id' ];
-      $password = $_POST[ 'password' ];
+      $username = htmlentities($_POST['nickname']);
+      $id = htmlentities($_POST[ 'id' ]);
+      $password = htmlentities($_POST[ 'password' ]);
       $password_confirm = $_POST[ 'password_confirm' ];
     $jb_conn = mysqli_connect( 'localhost', 'whkim712', 'white.1245', 'dngusdldl' );
     $jb_sql = "SELECT id FROM login WHERE id = '$id';";

@@ -1,5 +1,5 @@
 <?php
-$id=$_POST["id"];
+$id=htmlentities($_POST["id"]);
 $password=$_POST["password"];
 $encrypted_password = hash( "sha256" , $password);
 $link=mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
