@@ -28,7 +28,6 @@
         } 
             move_uploaded_file( $uploaded_file_name_tmp, $upload_folder.$uploaded_file_name );
         }
-    }
     else {
         echo "<script>alert('글 작성에 실패하였습니다.');history.back();</script>";
     }
