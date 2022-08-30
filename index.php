@@ -74,26 +74,24 @@
           </thead>
               
           <?php
-
           $orderset='desc';
-            if(isset($_POST['newold'])&&$_POST['newold']=='2')
-              $orserset='asc';
-           
-              
-              
-              $sql = "select * from board order by idx $orderset"; 
-              $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
-              $result = mysqli_query($link,$sql);
-                while($board = mysqli_fetch_assoc($result))
-                { 
-                  echo "<tbody>
-                    <tr>
-                      <td width='70'>{$board['idx']}</td>
-                      <td width='500'><a href='view.php?vieww={$board['idx']}'>{$board['title']}</a></td>
-                      <td width='120'>{$board['name']}</td>
-                      <td width='100'>{$board['date']}</td>
-                    </tr>
-                  </tbody>";
+          if(isset($_POST['newold'])&&$_POST['newold']=='2')
+            $orderset='asc';
+         
+            $sql = "select * from board order by idx $orderset";
+            $link = mysqli_connect("localhost","whkim712","white.1245","dngusdldl");
+            $result = mysqli_query($link,$sql);
+              while($board = mysqli_fetch_assoc($result))
+              { 
+                echo "<tbody>
+                  <tr>
+                    <td width='70'>{$board['idx']}</td>
+                    <td width='500'><a href='view.php?vieww={$board['idx']}'>{$board['title']}</a></td>
+                    <td width='120'>{$board['name']}</td>
+                    <td width='100'>{$board['date']}</td>
+                  </tr>
+                </tbody>";
+              }
             }
              
               ?>
